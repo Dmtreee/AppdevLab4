@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab4 - Library Information System</title>
+</head>
+<body>
+  <h2>Library Information System</h2>
+
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <td>
+        <form id="bookForm" autocomplete="off">
+          <table>
+            <tr><td>Title:</td><td><input id="title" required /></td></tr>
+            <tr><td>Author:</td><td><input id="author" required /></td></tr>
+            <tr><td>Year:</td><td><input id="year" type="number" required /></td></tr>
+            <tr><td>Copies:</td><td><input id="copies" type="number" required /></td></tr>
+            <tr>
+              <td colspan="2" align="center">
+                <button id="addBtn" type="submit">Add / Update</button>
+                <button id="resetBtn" type="button">Reset</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </td>
+    </tr>
+  </table>
+
+  <br />
+
+  <!-- Controls -->
+  <input id="liveSearch" placeholder="Live search (title or author)" />
+  <select id="filterSelect">
+    <option value="all">All books</option>
+    <option value="after2015">Books after 2015</option>
+    <option value="zero">Zero stock</option>
+    <option value="available">Available only</option>
+  </select>
+  <button id="filterBtn">Filter</button>
+  <button data-field="title" class="sortBtn">Sort by Title</button>
+  <button data-field="year" class="sortBtn">Sort by Year</button>
+  <button id="toggleView">Toggle Table/Card View</button>
+
+  <br /><br />
+
+  <!-- Book List + Summary -->
+  <div id="list"></div>
+  <div id="summary"></div>
+
+  <h3>Borrowers</h3>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr><td>Name:</td><td><input id="borrowerName" /></td></tr>
+    <tr><td>ID:</td><td><input id="borrowerId" /></td></tr>
+    <tr><td>Book:</td><td><select id="bookSelect"></select></td></tr>
+    <tr>
+      <td colspan="2" align="center">
+        <button id="borrowBtn">Borrow</button>
+        <button id="returnBtn">Return</button>
+      </td>
+    </tr>
+    <tr><td>Return book:</td><td><select id="returnSelect"></select></td></tr>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
